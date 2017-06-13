@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	{% include './Shared/shared.html' %}
+	<link rel="stylesheet" type="text/css" href="/static/css/login.css">
+	<script type="text/javascript" src="/static/js/login.js"></script>
+</head>
+<body>
+	<div class="ui middle aligned center aligned grid">
+	  <div class="column">
+	    <h2 class="ui teal image header">
+	      <div class="content">
+	        登入
+	      </div>
+	    </h2>
+	    <form class="ui large form" id="form" method="post">
+	    {% csrf_token %}
+	      <div class="ui stacked segment">
+	        <div class="field">
+	          <div class="ui left icon input">
+	            <i class="mail outline icon"></i>
+	            <input type="text" id="name" name="name" placeholder="使用者名稱">
+	          </div>
+	        </div>
+	        <div class="field">
+	          <div class="ui left icon input">
+	            <i class="lock icon"></i>
+	            <input type="password" id="password" name="password" placeholder="密碼">
+	          </div>
+	        </div>
+	        <div class="ui fluid large teal submit button" id="login">登入</div>
+	        <div class="ui fluid large facebook button" id="facebook" style="margin-top:5px;">
+	        	<i class="facebook square icon"></i>
+	        	Facebook
+	        </div>
+	        <div class="ui fluid large google plus button" id="google" style="margin-top:5px;">
+	        	<i class="google icon"></i>
+	        	Google
+	        </div>
+	      </div>
+	      <div class="ui error message"></div>
+	    </form>
+	    <div class="ui message" id="message">
+	   		 New user ?
+	    	<button class="ui blue button" id="sign_up">註冊</a>
+	    </div>
+	  </div>
+	</div>
+
+	<div class="ui modal" id="signup_modal">
+		<i class="close icon"></i>
+		<div class="header ui middle aligned center" id="modal_header">
+			註冊
+		</div>
+		<div class="content">
+			<form class="ui large form">
+			{% csrf_token %} 
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="user icon"></i>
+						<input type="text" id="signup_name" name="signup_name" placeholder="請輸入使用者名稱">
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="ui mail outline icon"></i>
+						<input type="email" id="signup_email" name="signup_email" placeholder="請輸入電子郵件">
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="ui lock icon"></i>
+						<input type="password"  id="signup_password" name="signup_password" placeholder="請輸入密碼">
+					</div>
+				</div>
+				<div class="field">
+					<div class="ui left icon input">
+						<i class="ui lock icon"></i>
+						<input type="password" id="repeat_password" name="repeat_password" placeholder="請再次輸入密碼">
+					</div>
+				</div>
+				<div class="ui fluid teal submit button " id="register">
+					註冊
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

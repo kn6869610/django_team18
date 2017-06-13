@@ -1,0 +1,75 @@
+body {
+  background-color: #DADADA;
+  font-family: 'Space Mono', monospace;
+}
+body > .grid {
+  height: 100%;
+}
+.image {
+  margin-top: -100px;
+}
+.column {
+  max-width: 450px;
+}
+#form{
+	box-shadow: 10px 10px 5px #888888;
+}
+#message{
+	box-shadow: 10px 10px 5px #888888;
+}
+#modal_header{
+	background-color: #009688;
+	color:white;
+	font-size:2em;
+	font-family: 'Space Mono', monospace;
+}
+#register{
+	font-family: 'Space Mono', monospace;
+	font-size:1em;
+}
+#signup_modal{
+	max-width: 450px;
+	left:70%;
+}
+
+/* start ripple animation */
+.ripple{
+	position: relative;
+	box-shadow: 0 0 1px transparent;
+}
+.ripple::before{
+	content: '';
+	position: absolute;
+	border:#00B5AD solid 1px;
+	top:0px;
+	bottom:0px;
+	left:0px;
+	right:0px;
+	animation-duration: 1s
+}
+.ripple:hover::before{
+	animation-name: ripple;
+}
+@keyframes ripple{
+	100%{
+		top:-12px;
+		bottom: -12px;
+		left:-12px;
+		right:-12px;
+		opacity:0; 
+	}
+}
+/* end ripple animation */
+/* start pop animation */
+.pop:hover{
+	animation-name: pop;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+}
+@keyframes pop{
+	50%{
+		transform:scale(0.9);
+	}
+}
+/* end pop animation */

@@ -1,0 +1,94 @@
+{% extends './Shared/base.html' %}
+{% block staticFile %} 
+	<link rel="stylesheet" type="text/css" href="/static/semantic/semantic.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<script type="text/javascript" src="/static/js/header.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.twbsPagination.min.js"></script>
+	<script type="text/javascript" src="/static/js/index.js"></script>
+{% endblock  %}
+
+{% block content %}
+	<div class="ui bottom attached segment grid wrapper" style="border-top:0px;	background-color: #EEE;">
+		<div class="sixteen wide column">
+			<div class="four column grid">
+				<div class="row">
+					<div class="ui four stackable cards">
+						{% for product in products %}
+							<div class="card">
+								<div class="ui image">
+									<div class="overlay"></div>
+									<div class="view-details product" id="product{{product.id}}">VIEW DETAILS</div>
+									<img src="https://semantic-ui.com/images/wireframe/image.png">
+								</div>
+								<div class="content ui">
+									<div class="description">
+										<span class="product-name">
+											<span class="productName">{{ product.name}}</span>
+											<span class="price">
+												${{ product.price}}
+											</span>
+										</span>
+										<span class="product-category">{{product.category}}</span>
+										<div class="quantity-container">
+											數量：
+											<div class="quantity">
+												0
+											</div>
+											<div class="quantity-trigger">
+												<div class="up"><i class="arrow circle up icon" id="up{{product.id}}"></i></div>
+												<div class="down"><i class="arrow circle down icon" id="down{{product.id}}"></i></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="extra content">
+									<div class="ui one buttons">
+										<div class="ui vertical animated red basic button order" id="order{{product.id}}">
+											<div class="visible content">
+												放入購物車
+											</div>
+											<div class="hidden content">
+												<i style="font-size:20px;" class="add in cart icon"></i>	
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>							
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+			  <ul id="pagination-demo" class="pagination"></ul>
+		</div>
+	</div>
+	{% for product in products %}
+		<div class="ui modal" id="modal{{product.id}}">
+			<i class="close icon"></i>
+			<div class="header">
+				Product
+			</div>
+			<div class="image content">
+				<div class="ui medium image">
+					<img src="https://semantic-ui.com/images/wireframe/image.png">
+				</div>
+				<div class="description">
+					<div class="ui header">
+						<span style="display:block;color: #b1b1b3">Product：<span style="color:black;font-weight: bold;">{{product.name}}</span></span>
+					</div>
+					<span style="display:block;color: #b1b1b3;">Product Description : </span>
+					<p>{{ product.description}}</p>
+				</div>
+			</div>
+			<div class="actions">
+				<div class="ui deny red button">
+					Cancel
+				</div>
+				<div class="ui positive right labeled icon button">
+					Order
+					<i class="add to cart icon"></i>
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock  %}

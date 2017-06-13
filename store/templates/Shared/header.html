@@ -1,0 +1,27 @@
+<div class="ui inverted segment header-nav" style="margin-bottom: 0px;border-radius: 0px;">
+	<div class="ui container">
+		<div class="ui inverted secondary pointing menu">
+			<a href="/index/" class="item active">首頁</a>
+			<a href="/about/" class="item">關於我們</a>
+			<div class="ui inverted right menu">
+				<a href="/shoppingList/" class="item">
+					<i class="cart icon"></i>
+					購物車
+					<span id="dollar" style="padding-left:10px;color:#ffecb3">
+						<i class="ui dollar icon" style="margin-right:0;"></i>
+						<span>{{totalPrice}}</span>
+						元
+					</span>
+				</a>
+				{% if name %}
+					<span class="item" style="padding-right:0;">歡迎 {{name}}
+
+					</span>
+					<a href="/accounts/login/" class="item"><i class="user icon"></i>登出</a>
+				{% else %}
+					<a href="/accounts/login/" class="item"><i class="user icon"></i>登入</a>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product Comment</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="/static/semantic/semantic.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/semantic/components/item.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/semantic/components/image.min.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/sweetalert.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<link rel="stylesheet" type="text/css" href="/static/css/product.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="/static/semantic/semantic.min.js"></script>
+	<script type="text/javascript" src="/static/js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="/static/js/jquery.twbsPagination.min.js"></script>
+	<script type="text/javascript" src="/static/js/index.js"></script>
+</head>
+<body>
+	{% include './Shared/header.html' %}
+	<div class="ui bottom attached segment grid" style="border-top:0px;">
+		<div class="three wide column sidenav" id="sidenav_wrapper" >
+		   <div class="ui visible inverted vertical accordion menu sidenav">
+			    <div class="item category">
+			    	<div class="title" style="color:black">
+			    		<i class="dropdown icon"></i>
+			    		Category1
+			    	</div>
+			    	<div class="content" style="color:black;">
+			    		<a href="" class="item product">Product 1</a>
+			    		<a href="" class="item product">Product 2</a>
+			    	</div>
+			    </div>
+			    <div class="item category">
+			    	<div class="title" style="color:black">
+			    		<i class="dropdown icon"></i>
+			    		Category 2
+			    	</div>
+			    	<div class="content" style="color:black">
+			    		<a href="" class="item product">Product 1</a>
+			    		<a href="" class="item product">Product 2</a>
+			    	</div>
+			    </div>
+			    <div class="item category">
+			    	<div class="title" style="color:black">
+			    		<i class="dropdown icon"></i>
+			    		Category 3
+			    	</div>
+			    	<div class="content " style="color:black">
+			    		<a href="" class="item product" >Product 1</a>
+			    		<a href="" class="item product">Product 2</a>
+			    	</div>
+			    </div>
+			</div>
+		 </div>
+		<div class="thirteen wide column">
+			<div class="row" id="search_wrapper">
+				<div class="sixteen wide column">
+					<div class="ui category search">
+						<div class="ui search dropdown selection multiple">
+							<select multiple=""></select>
+							<i class="dropdown icon"></i>
+							<div class="default text">Category</div>
+							<div class="menu">
+								<div class="item" data-value="Category1">Category 1</div>
+								<div class="item" data-value="Category2">Category 2</div>
+								<div class="item" data-value="Category3">Category 3</div>
+							</div>
+						</div>
+						<div class="ui icon input">
+							<input class="prompt" type="text" name="search" placeholder="Search....">
+							<i class="search icon"></i>
+						</div>
+						<div class="results"></div>
+					</div>
+				</div>
+			</div>
+			<div class="ui vertical segment">
+				<div class="ui container stackable grid">
+					<div class="row">
+						<div class="three wide column"></div>
+						<div class="ten wide column">
+							<div class="ui items">
+								<div class="item">
+									<div class="ui medium image">
+										<img src="https://semantic-ui.com/examples/assets/images/wireframe/white-image.png" class="image">
+									</div>
+									<div class="content">
+										<a href="" class="header">Product Name</a>
+										<div class="meta">
+											<a href="">Date</a>
+											<a href="">Category</a>
+										</div>
+										<div class="description">
+									        <p>Product descriptionProduct descriptionProduct</p>
+										</div>
+										<div class="extra">
+											<div class="ui left floated blue button wobble-button">
+												Order
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="three wide column"></div>
+		<!-- 				<div class="eight wide left floated column">
+							<img src="https://semantic-ui.com/examples/assets/images/wireframe/white-image.png" class="ui medium bordered image">
+						</div>
+						<div class="eight wide column">
+							test
+						</div> -->
+					</div>
+				</div>
+				<div class="ui minimal comments">
+					<h3 class="ui dividing header">Comment</h3>
+					<div class="comment">
+						<a href="" class="avatar">
+							<img src="https://semantic-ui.com/images/avatar/small/matt.jpg">
+						</a>
+						<div class="content">
+							<a href="" class="author">SingoBar</a>
+							<div class="metadata">
+								<span class="date">Today 4:52pm</span>
+							</div>
+							<div class="text">
+								Hello world
+							</div>
+							<div class="actions">
+								<a href="" class="reply">Reply</a>
+							</div>
+						</div>
+					</div>
+					<div class="comment">
+						<a href="" class="avatar">
+							<img src="https://semantic-ui.com/images/avatar/small/elliot.jpg">
+						</a>
+						<div class="content">
+							<a href="" class="author">Orz123</a>
+							<div class="metadata">
+								<span class="date">Today 6:00pm</span>
+							</div>
+							<div class="text">
+								Hello world
+							</div>
+							<div class="actions">
+								<a href="" class="reply">Reply</a>
+							</div>
+						</div>
+						<div class="comments">
+							<div class="comment">
+								<a href="" class="avatar">
+									<img src="https://semantic-ui.com/images/avatar/small/matt.jpg">
+								</a>
+								<div class="content">
+									<a href="" class="author">SingoBar</a>
+									<div class="metadata">
+										<span class="date">Just now</span>
+									</div>
+									<div class="text">
+										your right!
+									</div>
+									<div class="actions">
+										<a href="" class="reply">Reply</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<form class="ui reply form">
+						<div class="field">
+							<textarea></textarea>
+						</div>
+						<div class="ui labeled icon blue submit button wobble-button">
+							<i class="edit icon"></i>Reply
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

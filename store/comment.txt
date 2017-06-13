@@ -1,0 +1,89 @@
+# def register(request):
+# 	if request.POST:
+# 		username = request.POST['username']
+# 		email = request.POST['email']
+# 		password = request.POST['password']
+# 		isEmailExists = User.objects.filter(email=email)
+
+# 		pattern = re.compile('^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$')
+# 		match_result = pattern.match(email)
+
+# 		if match_result == None:
+# 			return HttpResponse('emailInValid')
+# 		if(isEmailExists):
+# 			return HttpResponse("emailExists")
+# 		User.objects.create(
+# 			name=username,
+# 			email = email,
+# 			password = md5.new(password).hexdigest()
+# 		)
+# 		return HttpResponse('success')
+
+
+
+
+
+# class LoginFormView(FormView):
+# 	form_class = LoginForm
+# 	template_name = 'login.html'
+# 	success_url = '/index/'
+
+# 	def post(self,request,*args,**kwargs):
+# 		form_class = self.get_form_class()
+# 		form = self.get_form(form_class)
+# 		if form.is_valid():
+# 			return self.form_valid(form,request,**kwargs)
+
+# 	def form_valid(self,form,request,**kwargs):
+# 		email = form.cleaned_data['email']
+# 		password = md5.new(form.cleaned_data['password']).hexdigest()
+# 		if(User.objects.filter(email=email,password=password)):
+# 		#	name = User.objects.filter(email=email,password=password)[0].name
+# 		#	request.session['name'] = name # store session
+# 			return HttpResponse('loginSuccess')
+# 		#	return HttpResponseRedirect('/index/')
+# 		return HttpResponse('loginError')
+
+
+
+# class RegisterFormView(FormView):
+# 	form_class = RegisterForm
+# 	template_name='login.html'
+
+# 	def post(self,request,*args,**kwargs):
+# 		form_class = self.get_form_class()
+# 		form = self.get_form(form_class)
+# 		if form.is_valid():
+# 			#return HttpResponse(form.cleaned_data['email'])
+# 			return self.form_valid(form,**kwargs)
+
+# 	def form_valid(self,form,**kwargs):
+# 		name = form.cleaned_data['username']
+# 		email = form.cleaned_data['email']
+# 		password = form.cleaned_data['password']
+# 		if((email == 'emailExists') or (email == 'emailInvalid') ):
+# 			return HttpResponse(email)
+# 		User.objects.create(
+# 			name = name,
+# 			email = email,
+# 			password = md5.new(password).hexdigest()
+# 		)
+# 		return HttpResponse('success')
+
+
+
+
+
+
+###### index.js order function
+        // var orderId = '#' + this.id;
+        // var price = $(orderId).parents('.extra').siblings('.ui.content').find('.price').text().split('$')[1];
+        // var quantity = $(orderId).parents('.extra').siblings('.ui.content').find('.quantity').text();
+        // var totalPrice = price * quantity;
+        // var userOrder = parseInt($("#dollar").text());
+        // $("#dollar").text(userOrder + totalPrice)
+#############
+
+
+
+

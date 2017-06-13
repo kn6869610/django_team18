@@ -1,0 +1,76 @@
+{% extends './Shared/base.html' %}
+{% block staticFile %}
+<link rel="stylesheet" type="text/css" href="/static/semantic/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+<link rel="stylesheet" type="text/css" href="/static/css/cart.css">
+<script>
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+
+function csrfSafeMethod(method) {
+	    // these HTTP methods do not require CSRF protection
+	    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+}
+		$.ajaxSetup({
+		    beforeSend: function(xhr, settings) {
+		        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+		            xhr.setRequestHeader("X-CSRFToken", csrftoken);
+		        }
+		    }
+		});
+
+</script>
+{% endblock %}
+{% block content %}
+<form class="ui large form" method="post" action="http://fatms.co/donate/pay.php"> 
+	<input type="hidden" name="username" id="username" value="test">
+	<input type="hidden" name="amount" id="amount" value={{totalPrice}}>
+	<input type="hidden" name="method" value="CVS">
+<div class="ui container wrapper" >
+	<table class="ui selectable celled table">
+		<thead>
+			<tr>
+			  <th>商品</th>
+			  <th>單價</th>
+			  <th>數量</th>
+			  <th style="width:15%">小計</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for product,value in products.items %}
+				<tr>
+				  <td>{{product}}</td>
+				  <td>{{value.price}}</td>
+				  <td>{{value.quantity}}</td>
+				  <td>{{value.total}}</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">
+					總計:{{totalPrice}}元
+				</td>
+				<td>
+					<button class="ui teal submit button" >前往結帳</button>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+</div>
+</form>
+{% endblock %}

@@ -1,0 +1,238 @@
+.ui.minimal.comments{
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+.item .content{
+	padding-top:20px !important;
+}
+.content .meta .price{
+	font-size: 30px ;
+	color:red;
+	font-weight: 700;
+}
+.content .meta .unit{
+	font-size: 25px;
+	color: red;
+}
+/* start hover ripple animation  */
+.ripple-out-wrapper{
+	position: relative;
+	transform:perspective(1px) translateZ(0);
+	box-shadow:0 0 1px transparent;
+}
+.hv-ripple-out{
+	overflow:hidden;
+}
+.hv-ripple-out::before{
+	content: "";
+	position: absolute;
+	border:#2185D0 solid 6px ;
+	top:0;
+	right:0;
+	left:0;
+	bottom: 0;
+	-moz-animation-duration:ripple-out;
+	-webkit-animation-duration:ripple-out;
+	-ms-animation-duration:ripple-out;
+	animation-duration: 1s;
+}
+.hv-ripple-out:hover::before{
+	-webkit-animation-name:ripple-out;
+	-moz-animation-name:ripple-out;
+	-ms-animation-name:ripple-out;
+	animation-name: ripple-out;
+}
+@keyframes ripple-out{
+	100%{
+		top:-12px;
+		bottom:-12px;
+		left:-12px;
+		right:-12px;
+		opacity:0 ;
+	}
+}
+@-webkit-keyframes ripple-out{
+	100%{
+		top:-12px;
+		bottom:-12px;
+		left:-12px;
+		right:-12px;
+		opacity: 0;
+	}
+}
+@-moz-keyframes ripple-out{
+	100%{
+		top:-12px;
+		bottom: -12px;
+		left:-12px;
+		right:-12px;
+		opacity: 0;
+	}
+}
+@-ms-keyframes ripple-out{
+	100%{
+		top:-12px;
+		bottom: -12px;
+		left:-12px;
+		right:-12px;
+		opacity: 0;
+	}
+}
+/* end hover ripple animation */
+
+/* start push animation */
+
+/*.push-botton:hover{
+	animation-name: push;
+	animation-iteration-count: 1;
+	animation-duration: 0.3s;
+	animation-timing-function: linear;
+}
+
+@keyframes push{
+	50%{
+		transform:scale(0.5);
+	}
+	100%{
+		transform: scale(1);
+	}
+}*/
+/* end push animation */
+
+
+/* start wobble animation */
+.wobble-button{
+	transform-origin:0 100%;
+}
+.wobble-button:hover{
+	animation-name: wobble;
+	animation-iteration-count: 1;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name:wobble;
+	-webkit-animation-iteration-count:1;
+	-webkit-animation-duration:1s;
+	-webkit-animation-timing-function:ease-in-out;
+	-moz-animation-name:wobble;
+	-moz-animation-iteration-count:1;
+	-moz-animation-duration:1s;
+	-moz-animation-timing-function:ease-in-out;
+}
+@keyframes wobble{
+	16.65%{
+		transform: skew(-12deg);
+	}
+	33.3%{
+		transform: skew(10deg);
+	}
+	49.95%{
+		transform: skew(-6deg);
+	}
+	66.6%{
+		transform: skew(4deg);
+	}
+	83.25%{
+		transform: skew(-2deg);
+	}
+	100%{
+		transform: skew(0deg);
+	}
+}
+@-webkit-keyframes wobble{
+	16.65%{
+		transform: skew(-12deg);
+	}
+	33.3%{
+		transform: skew(10deg);
+	}
+	49.95%{
+		transform: skew(-6deg);
+	}
+	66.6%{
+		transform: skew(4deg);
+	}
+	83.25%{
+		transform: skew(-2deg);
+	}
+	100%{
+		transform: skew(0deg);
+	}
+}
+@-moz-keyframes wobble{
+	16.65%{
+		transform: skew(-12deg);
+	}
+	33.3%{
+		transform: skew(10deg);
+	}
+	49.95%{
+		transform: skew(-6deg);
+	}
+	66.6%{
+		transform: skew(4deg);
+	}
+	83.25%{
+		transform: skew(-2deg);
+	}
+	100%{
+		transform: skew(0deg);
+	}
+}
+/* end wobble animation */
+/* sidenav css */
+a.product:hover{
+	background-color:rgba(0,0,0,0.1) !important;
+	color:black;
+	border-bottom: 2px solid black ;
+	box-shadow:inset 0 0 2px #000000 ;
+	-webkit-box-shadow:inset 0 0 2px #000000;
+	-moz-box-shadow:inset  0 0 2px #000000;
+	border-radius: 5px;
+}
+.category .title:hover{
+	color:#757575 !important;
+}
+/* end sidenav css 
+
+
+/* content start */
+.image{
+	padding-right: 30px;
+}
+.content{
+	padding-right:21px !important;
+	background-color: white !important;
+}
+.comment .content{
+	background-color:#eee !important;
+}
+.content .extra .button{
+	width:100%;
+	height:50px;
+	text-align:center !important;
+	line-height:25px;
+	display: inline-block;
+	font-size:1.2em;
+}
+.extra{
+	width: 100%;
+	padding-bottom: 10px !important;
+}
+.extra.quantity{
+	font-size: 18px;
+}
+.extra.quantity .input{
+	width: 100%;
+	height: 50px;
+}
+.extra.quantity .button{
+	padding-top:0;
+	height: 25px;
+	background-color: #2185D0;
+	color: white;
+}
+
+
+/* content end */
+
+

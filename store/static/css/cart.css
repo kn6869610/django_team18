@@ -1,0 +1,63 @@
+.ui.container.wrapper{
+	padding-top:30px;
+	perspective: 1200px;
+	margin:20px auto;
+}
+.ui.table{
+	perspective: 1200px;
+	position: relative;
+	box-shadow: 0px 5px 10px 10px #EEE;
+}
+.ui.table tr th{
+	background-color: #077571;
+	color:white;
+	text-align: center;
+}
+.ui.celled.table tr td, 
+.ui.celled.table tr th {
+    border-left: 1px solid rgba(9, 12, 14, 0.3);
+}
+.ui.selectable.celled.table::after{
+	position: absolute;
+	width: 100% !important;
+	height: 100% !important;
+	background-color: black !important;
+	transform:rotateX(90deg) translateZ(-150px) !important;
+	z-index: -1;
+}
+table tfoot tr td{
+	text-align: right !important;
+	border-top: 1px solid rgba(34,36,38,.1) !important;
+}
+table tfoot tr td:nth-child(2){
+	border-left: none !important;
+}
+table tfoot button{
+	width: 100%;
+	font-size: 18px !important;
+	transition:all 1s ease-in-out;
+	position: relative;
+	overflow: hidden;
+	transform:perspective(1px) translateZ(0px);
+}
+table tfoot button:before{
+	position: absolute;
+	content: '';
+	top:0;
+	left:0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	transform:scaleX(0);
+	transform-origin: 0 50%;
+	background-color:#077571;
+	transition:all 0.5s ease-in-out;
+	z-index: -1;
+}
+table tfoot button:hover::before{
+	transform:scaleX(1);
+}
+
+
+
